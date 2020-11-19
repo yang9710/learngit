@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 数组</h1>
+
+<p>Array.forEach() 为每个数组元素调用函数。</p>
+
+<p>Internet Explorer 8 以及更早的版本不支持 Array.forEach()。</p>
+
+<p id="demo"></p>
+
+<script>
+var name, text;
+names = ["Tian","Ning","JackyLove","Ming","Rookie"];
+
+text = "<ul>";
+names.forEach(myFunction);
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+
+function myFunction(value) {
+    text += "<li>" + value + "</li>";
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<!-- <head>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "hello!";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 onclick="changeText(this)">请点击这段文本！</h1>
+
+</body> -->
+
+<!-- <body>
+
+    <p>点击按钮来执行<b>displayDate</b>函数。</p>
+
+    <button onclick="displayDate()">试一试 </button>
+
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+
+    <p id="demo"></p>
+</body> -->
+
+<body>
+
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+        style="background-color:#D94A38;width:200px;height:50px;padding-top:25px;text-align:center;">
+        点击这里
+    </div>
+
+    <script>
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "松开鼠标"
+        }
+
+        function mUp(obj) {
+            obj.style.backgroundColor = "#D94A38";
+            obj.innerHTML = "谢谢你"
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="a">姓名</th>
+                <th class="b">年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        //准备数据
+        var arr = [
+      {
+        name: 'Jack',
+        age: 18,
+        gender: '男'
+      },
+      {
+        name: 'Rose',
+        age: 20,
+        gender: '女'
+      },
+      {
+        name: 'Tom',
+        age: 22,
+        gender: '男'
+      }
+    ]
+
+    //获取 tbody 标签
+    var tBody = document.querySelector('tbody');
+    bindHtml();
+    function bindHtml() {
+        //准备空字符串
+        var str = '';
+
+        // 遍历数组(数组有多少成员就有多少 tr 行)
+        for (var i = 0; i < arr.length; i ++){
+            str += '<tr>';
+
+            var item = arr[i];
+            for (var attr in item){
+                str += '<td>';
+                str += item[attr];
+                str += '</td>';
+            }
+
+            str += '<td class="del">删除</td>';
+
+            str += '</tr>';
+        }
+
+        // 渲染页面页数
+        tBody.innerHTML = str;
+        bindEvent();
+    }
+
+    //这个函数每次绑定完毕页面都要执行一次
+    function bindEvent() {
+        // 获取所有的删除按钮
+        var dels = document.querySelectorAll(".del");
+        // 通过循环给dels[i]绑定事件函数
+        for (var j = 0; j < dels.length; j ++){
+            // 添加事件之前，给每一个元素一个标识符
+            dels[j].setAttribute('index',j);
+            // 绑定事件
+            dels[j].onclick = function() {
+                var index = this.getAttribute('index') - 0;
+                // 删除数组中第 index 个
+                arr.splice(index,1);
+
+                bindHtml();
+            }
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //选择排序思路：比较大小将索引交换
+        var arr = [3, 5, 1, 8, 6, 7, 9, 2, 4];
+
+        for (var i = 0; i < arr.length - 1; i ++){
+            var minIndex = i;
+            for (var j = i + 1; j < arr.length; j ++){
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i){
+                var tmp = arr[i];
+                arr [i] = arr[minIndex];
+                arr[minIndex] = tmp;
+            }
+        }
+
+        console.log(arr);
+
+    </script>
+</body>
+</html>
